@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "214dcc8d-037a-4397-9346-f4b071043e68",
 		"name": "sebastianrath/graphql-reflect-go",
+		"description": "Each POST request has a few examples.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26381468"
 	},
@@ -41,7 +42,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "{\n    cats\n    { \n        name\n\n        age\n    }\n}",
+								"query": "{\n    cats\n    { \n        name\n\n        age\n\n        enemies {\n            name\n        }\n    }\n}",
 								"variables": ""
 							},
 							"options": {
@@ -75,7 +76,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "{\n    cats\n    { \n        name\n    }\n}",
+								"query": "{\n    cats\n    {\n        name\n    }\n}",
 								"variables": ""
 							},
 							"options": {
@@ -139,6 +140,40 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "{\n    dogs\n    { \n        name\n\n        age\n\n        friend\n        { \n            name\n        }\n    }\n}",
+								"variables": ""
+							},
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/dogs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"dogs"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Query dogs with friends&enemies",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    dogs\n    { \n        name\n\n        age\n\n        friend\n        { \n            name\n        }\n\n        enemies {\n            name\n        }\n    }\n}",
 								"variables": ""
 							},
 							"options": {
