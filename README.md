@@ -33,7 +33,11 @@ This API provides a simple and efficient way to query specific fields from Go st
     Example:
 
     ```go
-    b, err := QueryStructViaGraphql("cats", cats, post.Query);
+    func QueryCats(c echo.Context) error {
+        ...
+        b, err := QueryStructViaGraphql("cats", cats, post.Query);
+        ...
+    }
     ```
 
 3. **Set Up Routes**:
